@@ -8,7 +8,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task3.V25.Lib
         public string SaveToFileTextData(int x)
         {
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask2.bin");
-            double y = (3 * Math.Pow(x, 4) + 1) / (3 * Math.Pow(x, 3));
+            double y = (3 * Math.Pow(x, 4) + 1) / (Math.Pow(x, 3));
             y = Math.Round(y);
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
             {
