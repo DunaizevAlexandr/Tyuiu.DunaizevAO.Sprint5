@@ -22,7 +22,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task1.V12.Lib
                 }
                 else
                 {
-                    y = (5 * x + 2.5) / (Math.Sin(x) - 2);
+                    y = ((5 * x + 2.5) / (Math.Sin(x) - 2)) + 2 ;
                     y = Math.Round(y, 2);
                 }
 
