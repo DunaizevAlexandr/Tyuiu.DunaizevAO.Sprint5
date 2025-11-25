@@ -27,9 +27,9 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task1.V12.Lib
                 }
 
                 result += y.ToString("F2").Replace(',', '.');
+                File.AppendAllText(path, result);
             }
 
-            File.WriteAllText(path, result);
             return path;
         }
     }
