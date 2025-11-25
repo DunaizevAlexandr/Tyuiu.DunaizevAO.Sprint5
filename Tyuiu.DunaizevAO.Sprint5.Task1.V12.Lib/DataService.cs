@@ -15,7 +15,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task1.V12.Lib
             {
                 double y;
 
-                // Простая проверка: если знаменатель близок к 0, ставим 0
+                
                 if (Math.Sin(x) == 2)
                 {
                     y = 0;
@@ -26,7 +26,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task1.V12.Lib
                     y = Math.Round(y, 2);
                 }
 
-                result += y.ToString("F2").Replace(',', '.') + "\n";
+                result += y.ToString("F2").Replace(',', '.');
             }
 
             File.WriteAllText(path, result);
