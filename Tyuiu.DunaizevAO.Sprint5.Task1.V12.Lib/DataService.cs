@@ -9,29 +9,27 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task1.V12.Lib
         {
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask1.txt");
 
-            int count = stopValue - startValue + 1;
-            string[] lines = new string[count];
+            string result = "";
 
-            for (int i = 0; i < count; i++)
+            for (int x = startValue; x <= stopValue; x++)
             {
-                int x = startValue + i;
-                double denominator = Math.Sin(x) - 2;
-                double value;
+                double y;
 
-                if (denominator == 0)
+                // Простая проверка: если знаменатель близок к 0, ставим 0
+                if (Math.Sin(x) == 2)
                 {
-                    value = 0;
+                    y = 0;
                 }
                 else
                 {
-                    value = (5 * x + 2.5) / denominator;
-                    value = Math.Round(value, 2);
+                    y = (5 * x + 2.5) / (Math.Sin(x) - 2);
+                    y = Math.Round(y, 2);
                 }
 
-                lines[i] = $"{value:F2}".Replace(',', '.');
+                result += y.ToString("F2").Replace(',', '.') + "\n";
             }
 
-            File.WriteAllLines(path, lines);
+            File.WriteAllText(path, result);
             return path;
         }
     }
