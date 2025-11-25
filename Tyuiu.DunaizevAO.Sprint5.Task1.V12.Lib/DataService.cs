@@ -7,29 +7,29 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task1.V12.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask1.txt");
+            string path = $@"{Path.GetTempPath()}OutPutFileTask1.txt";
+            FileInfo fileInfo = new FileInfo(path);
+            bool FileExists = fileInfo.Exists;
 
-            string result = "";
-
+            if (FileExists)
+            {
+                File.Delete(path);
+            }
+            double y;
+            string strY;
             for (int x = startValue; x <= stopValue; x++)
             {
-                double y;
-
-                
-                if (Math.Sin(x) == 2)
+                y = Math.Round((5 * x + 2.5) / (Math.Sin(x) - 2) + 2, 2);
+                strY = Convert.ToString(y);
+                if (x != stopValue)
                 {
-                    y = 0;
+                    File.AppendAllText(path, strY + Environment.NewLine);
                 }
                 else
                 {
-                    y = ((5 * x + 2.5) / (Math.Sin(x) - 2)) + 2 ;
-                    y = Math.Round(y, 2);
+                    File.AppendAllText(path, strY);
                 }
-
-                result += y.ToString("F2").Replace(',', '.');
-                File.AppendAllText(path, result);
             }
-
             return path;
         }
     }
