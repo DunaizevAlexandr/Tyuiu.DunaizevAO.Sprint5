@@ -9,7 +9,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task3.V25.Lib
         {
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask2.bin");
             double y = (3 * Math.Pow(x, 4) + 1) / (Math.Pow(x, 3));
-            y = Math.Round(y);
+            y = Math.Round(y, 3);
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
             {
                 writer.Write(BitConverter.GetBytes(y));
