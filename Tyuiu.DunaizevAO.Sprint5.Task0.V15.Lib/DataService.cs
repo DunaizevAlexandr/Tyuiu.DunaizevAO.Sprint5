@@ -8,7 +8,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task0.V15.Lib
         {
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
             double y = (x) / (x * x * x + 2);
-            y = Math.Round(y,3);
+            y = Math.Round(y, 3);
             File.WriteAllText(path, Convert.ToString(y));
             return path;
         }
