@@ -43,6 +43,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task2.V2.Lib
                 {
                     File.AppendAllText(path, str);
                 }
+                str = "";
             }
             return path;
         }
