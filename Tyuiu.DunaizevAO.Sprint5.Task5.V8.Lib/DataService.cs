@@ -7,6 +7,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task5.V8.Lib
         public double LoadFromDataFile(string path)
         {
             string str = File.ReadAllText(path);
+            str = str.Replace('.', ',');
             string[] chis = str.Split( );
             double[] ch = new double[chis.Length];
             for (int i = 0; i < chis.Length; i++)
