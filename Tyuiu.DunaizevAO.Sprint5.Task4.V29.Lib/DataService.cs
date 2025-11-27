@@ -11,7 +11,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task4.V29.Lib
             str = str.Replace('.', ',');
             double x = double.Parse(str);
             double y = (x) / (2 * x) + Math.Sin(Math.Pow(x, 2));
-            double y = Math.Round(y, 3);
+            y = Math.Round(y, 3);
             return y;
         }
     }
