@@ -19,7 +19,7 @@ namespace Tyuiu.DunaizevAO.Sprint5.Task5.V8.Lib
 
             for (int i = 1; i < ch.Length; i++)
             {
-                if (ch[i] < ch[i-1])
+                if (ch[i] < res && (ch[i]%1)!=0)
                 {
                     res = ch[i];
                 }
